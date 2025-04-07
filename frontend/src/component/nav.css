@@ -1,0 +1,200 @@
+.nav {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  column-gap: 5em;
+}
+.nav .header{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    text-shadow: 1px 12px #777777;
+    opacity: 0;
+    animation: show 2s forwards ease-in-out;
+}
+
+.nav .profileImage{
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    color: turquoise;
+    animation-delay: 3s;
+}
+
+.nav .profileImage img{
+    border-radius: 50%;
+    width: 12em;
+    height: 12em;
+}
+
+.nav .navLinks{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav .navLinks ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transform: skewY(4deg) rotateY(40deg);
+    transform-style: preserve-3d;
+    perspective: 1000px; /* Consider adding to parent for 3D effect */
+}
+
+.nav .navLinks ul li:nth-child(1) { animation-delay: 0.1s; }
+.nav .navLinks ul li:nth-child(2) { animation-delay: 0.3s; }
+.nav .navLinks ul li:nth-child(3) { animation-delay: 0.5s; }
+.nav .navLinks ul li:nth-child(4) { animation-delay: 0.7s; }
+.nav .navLinks ul li:nth-child(5) { animation-delay: 0.9s; }
+.nav .navLinks ul li:nth-child(6) { animation-delay: 1.1s; }
+
+.nav .navLinks ul li:nth-child(1)::after {
+    content: 'Home';
+    position: absolute;
+    top: 2.03em;
+    left: 0;
+    width: 5em;;
+    height: 100%;
+    color: #777777;
+}
+
+.nav .navLinks ul li:nth-child(2)::after {
+    content: 'About';
+    position: absolute;
+    top: 2.03em;
+    left: 0;
+    width: 5em;;
+    height: 100%;
+    color: #777777;
+}
+
+.nav .navLinks ul li:nth-child(3)::after {
+    content: 'Skill';
+    position: absolute;
+    top: 2.03em;
+    left: 0;
+    width: 5em;;
+    height: 100%;
+    color: #777777;
+}
+
+.nav .navLinks ul li:nth-child(4)::after {
+    content: 'Serivices';
+    position: absolute;
+    top: 2.03em;
+    left: 0;
+    width: 5em;;
+    height: 100%; 
+    color: #777777;
+}
+
+.nav .navLinks ul li:nth-child(5)::after {
+    content: 'Contact';
+    position: absolute;
+    top: 2.03em;
+    left: 0;
+    width: 5em;;
+    height: 100%; 
+    color: #777777;
+}
+
+.nav .navLinks ul li:nth-child(6)::after { 
+    content: 'Faq';
+    position: absolute;
+    top: 2.03em;
+    left: 0;
+    width: 5em;;
+    height: 100%; 
+    color: #777777;
+}
+
+.nav .navLinks ul li{
+    background: rgb(145, 91, 145);
+    margin-bottom: 1.2em;
+    padding: 0.6em;
+    position: relative;
+    color:#fff;
+    font-weight: 600;
+    transition: all .5s ease-in-out;
+    width: 9em;
+    opacity: 0;
+    z-index: 1;
+    animation: slidein 0.6s forwards ease-in-out;
+}
+
+.nav .navLinks ul li::after {
+    position: absolute;
+    top: 2.03em;
+    left: 0;
+    width: 5em;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    background: rgb(71, 45, 71);
+    z-index: -1;
+    transform: skewY(-15deg) translateX(10.17em); /* start off-screen */
+    transition: all 0.3s ease;
+}
+
+.nav .navLinks ul li::before {
+    content: '';
+    position: absolute;
+    top: -1.3em;
+    left: 0;
+    width: 10.2em;
+    height: 55%;
+    background: rgb(103, 76, 103);
+    z-index: -1;
+    transform: skewX(-75deg) translateX(2.4em); /* start off-screen */
+    transition: all 0.3s ease;
+}
+.nav .navLinks ul li:hover,
+.nav .navLinks ul li:active{
+    background: rgb(61, 80, 203);
+    translate: 2em; /* start off-screen */
+    transition: all 0.3s ease-in-out;
+}
+.nav .navLinks ul li:hover::after {
+    background: rgb(24, 51, 132);
+    transform: skewY(-15deg) translateX(10.17em); /* slide in on hover */
+    transition: all 0.3s ease-in-out;
+}
+.nav .navLinks ul li:hover::before {
+    background: rgb(30, 45, 95);
+    transform: skewX(-75deg) translateX(2.5em); /* start off-screen */
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes slidein {
+    0%{
+        opacity: 0;
+        transform: translateX(10em);
+    }100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes show {
+    0%{
+        opacity: 0;
+        scale: 0;
+    }100%{
+        opacity: 1;
+        scale: 1;
+    }
+}
